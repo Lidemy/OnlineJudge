@@ -7,14 +7,12 @@ _c_lang_config = {
     "template": """//PREPEND BEGIN
 #include <stdio.h>
 //PREPEND END
-
 //TEMPLATE BEGIN
 int add(int a, int b) {
   // Please fill this blank
   return ___________;
 }
 //TEMPLATE END
-
 //APPEND BEGIN
 int main() {
   printf("%d", add(1, 2));
@@ -55,14 +53,12 @@ _cpp_lang_config = {
     "template": """//PREPEND BEGIN
 #include <iostream>
 //PREPEND END
-
 //TEMPLATE BEGIN
 int add(int a, int b) {
   // Please fill this blank
   return ___________;
 }
 //TEMPLATE END
-
 //APPEND BEGIN
 int main() {
   std::cout << add(1, 2);
@@ -102,10 +98,8 @@ _cpp_lang_spj_config = {
 _java_lang_config = {
     "template": """//PREPEND BEGIN
 //PREPEND END
-
 //TEMPLATE BEGIN
 //TEMPLATE END
-
 //APPEND BEGIN
 //APPEND END""",
     "compile": {
@@ -129,10 +123,8 @@ _java_lang_config = {
 _py2_lang_config = {
     "template": """//PREPEND BEGIN
 //PREPEND END
-
 //TEMPLATE BEGIN
 //TEMPLATE END
-
 //APPEND BEGIN
 //APPEND END""",
     "compile": {
@@ -152,10 +144,8 @@ _py2_lang_config = {
 _py3_lang_config = {
     "template": """//PREPEND BEGIN
 //PREPEND END
-
 //TEMPLATE BEGIN
 //TEMPLATE END
-
 //APPEND BEGIN
 //APPEND END""",
     "compile": {
@@ -173,6 +163,21 @@ _py3_lang_config = {
     }
 }
 
+_js_lang_config = {
+    "template": """//PREPEND BEGIN
+//PREPEND END
+//TEMPLATE BEGIN
+//TEMPLATE END
+//APPEND BEGIN
+//APPEND END""",
+    "run": {
+        "exe_name": "solution.js",
+        "command": "/usr/bin/nodejs {exe_path}",
+        "seccomp_rule": None,
+        "env": default_env
+    }
+}
+
 languages = [
     {"config": _c_lang_config, "spj": {"compile": _c_lang_spj_compile, "config": _c_lang_spj_config},
      "name": "C", "description": "GCC 5.4", "content_type": "text/x-csrc"},
@@ -181,4 +186,5 @@ languages = [
     {"config": _java_lang_config, "name": "Java", "description": "OpenJDK 1.8", "content_type": "text/x-java"},
     {"config": _py2_lang_config, "name": "Python2", "description": "Python 2.7", "content_type": "text/x-python"},
     {"config": _py3_lang_config, "name": "Python3", "description": "Python 3.5", "content_type": "text/x-python"},
+    {"config": _js_lang_config, "name": "JavaScript", "description": "JavaScript ES6", "content_type": "text/x-js"},
 ]
